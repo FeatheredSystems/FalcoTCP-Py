@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "falcotcp-py"
+version = "0.1.0"
+authors = [
+  { name="Theo", email="falcotcp@gmail.com" },
+]
+description = "Secure TCP server/client with AES-256-GCM encryption for trusted endpoint communication"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Apache 2.0 License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "cryptography",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/FeatheredSystems/FalcoTCP-Py"
+"Bug Tracker" = "https://github.com/FeatheredSystems/FalcoTCP-Py"
