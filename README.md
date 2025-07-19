@@ -6,6 +6,11 @@ Secure TCP server/client with AES-256-GCM encryption for trusted endpoint commun
 
 This project was created to simplify the development of connection handlers. It abstracts the TCP layer without any hand-holding—remaining low-level while still providing a clean and minimal abstraction.
 
+## Installation
+```
+pip install falcotcp
+```
+
 ## Protocol
 
 Works with the server listening to the host address. When a client tries to connect, it sends a chunk of bytes encrypted with AES-GCM-256. If the server decrypts the request, the connection is successfully established; the TCP socket is shut down otherwise.
