@@ -1,6 +1,6 @@
 # FalcoTCP-Py
 
-Secure TCP server/client with AES-256-GCM encryption for trusted endpoint communication, like server-to-microservices or server-to-database. Handles authentication, messaging, and pings, with load-balanced worker distribution in sync/async modes.
+Secure TCP server/client with AES-256-GCM encryption for trusted endpoint communication, like server-to-microservices or server-to-database. Handles authentication, messaging, and pings, with load-balanced worker distribution.
 
 ## Why does this project exist?
 
@@ -37,14 +37,6 @@ For request type 2 (ping), no decryption is performed and no error handling is n
 
 If an unregistered request type is received, the server ignores it without taking any action.
 
-## Panics (Rust Implementation)
-
-The protocol assumes you will not write faulty code that causes a panic. Ensure your implementation avoids conditions that could lead to a system panic.
-
 ## Security
 
 The security of the protocol relies entirely on password management. This password is essentially a secret key, so treat it as such and protect it properly. It must be a fixed-size array of 32 bytes, generated using a cryptographically secure method. The password is the main pillar of the protocol's safety — which is expected, as TLS (over HTTP) works similarly. The difference here is that the password is managed by you, the operator.
-
-## Implementations
-
-Currently, it has only a single connection handler written in Rust. However, I plan to implement it for both Python and Go in the future — Python first, then Go.
